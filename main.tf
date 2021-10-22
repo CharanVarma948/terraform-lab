@@ -8,6 +8,7 @@ variable env_prefix{}
 variable my_ip{}
 variable "instance_type" {}
 variable "public_key_location"{}
+variable "private_key_location"{}
   
 
 
@@ -124,8 +125,9 @@ resource "aws_instance" "myapp_server" {
                     sudo usermod -aG docker ec2-user
                     docker run -p 8080:80 nginx
 
-                    
-                EOF
+            
+    
+     
 
     tags={
 
