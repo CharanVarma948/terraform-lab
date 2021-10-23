@@ -125,10 +125,8 @@ resource "aws_instance" "myapp_server" {
                     sudo usermod -aG docker ec2-user
                     docker run -p 8080:80 nginx
 
-            
+                 EOF
     
-     
-
     tags={
 
         Name="${var.env_prefix}-server"
