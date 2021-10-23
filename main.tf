@@ -8,6 +8,7 @@ variable env_prefix{}
 variable my_ip{}
 variable "instance_type" {}
 variable "public_key_location"{}
+variable "private_key_location"{}
   
 
 
@@ -122,31 +123,10 @@ resource "aws_instance" "myapp_server" {
                     sudo yum update -y && sudo yum install -y docker
                     sudo systemctl start docker
                     sudo usermod -aG docker ec2-user
-                    docker run -p 8080:80 nginx
-
-                    
-                EOF
-
-    tags={
-
-        Name="${var.env_prefix}-server"
+                    docker run -p 8080:80 nginx 
+                E0F
+    tags=
+        {
+        Name= ${var.env_prefix}-server
+        }
     }
-  
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
